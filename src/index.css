@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #3a2a23;
+  --color-mocha: #b38e7a;
+  --color-clay: #9f7a66;
+  --color-blush: #cdab99;
+  --color-sand: #e7dcd4;
+  --color-taupe: #8a766b;
+  --color-cream: #f6efea;
+  --color-surface: #ffffff;
+
+  --font-display: "Lora", serif;
+  --font-sans: "Poppins", sans-serif;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+body {
+  background-color: var(--color-cream);
+  background-image: radial-gradient(circle, #e0d2c8 0.5px, transparent 0.5px);
+  background-size: 28px 28px;
+  background-position: center;
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-text-fill-color: #3a2a23;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
